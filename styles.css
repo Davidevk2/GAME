@@ -1,0 +1,86 @@
+body{
+    background-color: #f6f6f6;
+    position: relative;
+}
+
+.modal-dialog{
+    margin: auto;
+    display: none;
+    z-index: 10;
+}
+.card{
+    margin: 5px 0px;
+    text-align: center;
+    justify-content: center;
+}
+
+button{
+    margin: 10px 0px;
+}
+
+.volunteers{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(60px, auto);
+}
+
+.item{
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    width: 1fr ;
+    border: 1px solid black;
+    border-radius:6px;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+h2{
+    background-color: tomato;
+    color: white;
+    font-family: monospace, sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    width: 80%;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.actions{
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.btn-dark{
+    border: 1px solid blueviolet;
+    background-color: blueviolet;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.btn-dark:hover{
+    color: blueviolet;
+    background-color: white;
+    border: 2px solid blueviolet;
+    transition: 0.4s;
+}
+
+.controls{
+    padding: 10px;
+    margin: auto;
+}
+
+.key{
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 4px;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
