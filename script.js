@@ -4,7 +4,6 @@ let volunteers = [];
 const colors = ["tomato", "pink", "cyan", "coral", "cornflowerblue", "mediumslateblue"];
 
 function fillContent(){
-    console.log("here we go!");
     
     let amount =  document.getElementById("amount").value;
    if(amount >= 10 && amount <= 150){
@@ -34,41 +33,49 @@ function createCards(){
         card.innerText = num; 
         divVolunteers.appendChild(card);
     });
+
+    console.log(divVolunteers);
 }
 
 function chooseColor(){
     let index = Math.floor(Math.random() * colors.length);
-    console.log(index);
     let color = colors[index];
     return color;
 }
 
+const modalWinner = document.getElementById("modalWinner");
+const boxWinner = document.querySelector(".winner-Info");
+const btnClose = document.getElementById("btn-Close");
+
 function chooseWinner(){
-    let index = Math.ceil(Math.random() * volunteers.length);
-    console.log(index);
+    let index = Math.floor(Math.random() * volunteers.length);
     let winner = volunteers[index];
 
     const sound1 = new Audio('./sounds/choosing.mp3');
-
+    
     sound1.play();
     setTimeout(()=>{
         sound1.pause();
         const sound2 = new Audio('./sounds/drums.mp3');
         const sound3 = new Audio('./sounds/winner.mp3');
-        //  sound2.play();
+        sound2.play();
         sound3.play();
 
-        alert("the winner is : "+ winner);   
+        modalWinner.classList.add("fade-in");
+        modalWinner.style.display = "block";
+        boxWinner.textContent = winner ;
+
         volunteers.pop(winner);
+
         console.log(volunteers);
         //removeChild;
     }, 7000);
     return winner;
 }
 
+const modal = document.querySelector(".modal-dialog");
 function showMessage(message, typeMessage){
     const txtMessage = document.querySelector("#txtMessage");
-    const modal = document.querySelector(".modal-dialog");
 
     txtMessage.innerText = message;
     modal.style.display = ("block");
@@ -76,12 +83,19 @@ function showMessage(message, typeMessage){
     
 }
 
+
+//cations with buttons
 btnSend.onclick =  fillContent;
 btnChoose.onclick = chooseWinner;
 
+//close modal
+btnClose.onclick = function () {
+    modalWinner.style.display = "none";
+}
 
+
+//shorcuts funcionality or controls
 document.addEventListener("keypress", (event)=>{
-    console.log(event);
     if(event.code == "Space" || event.key== " "){
         let amount = document.getElementById("amount");
         if(amount.value != ""){
@@ -105,5 +119,5 @@ document.addEventListener("keypress", (event)=>{
             document.exitFullscreen();
         }
     }
-})
+});
 
