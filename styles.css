@@ -1,5 +1,12 @@
 body{
     background-color: #f6f6f6;
+    position: relative;
+}
+
+.modal-dialog{
+    margin: auto;
+    display: none;
+    z-index: 10;
 }
 .card{
     margin: 5px 0px;
@@ -51,6 +58,7 @@ h2{
 }
 
 .btn-dark{
+    border: 1px solid blueviolet;
     background-color: blueviolet;
     font-weight: bold;
     text-transform: uppercase;
