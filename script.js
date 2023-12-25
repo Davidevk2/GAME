@@ -107,7 +107,3 @@ document.addEventListener("keypress", (event)=>{
     }
 })
 
-/* sounds
-https://youtu.be/EQtGmxuIPFY?si=g5PmL5UZnOOlqPRI
-https://youtu.be/V5KGfrXxUG4?si=R2u9ceK-bYMoQ6GZ
-*/
